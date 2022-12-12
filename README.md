@@ -29,7 +29,7 @@ _Updating on previous project and applying C# into it. Plus testing our lines of
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Download here](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
-* _From there download repo for **Pierre's Bakery**_
+* _From there download repo for **VendorOrderTracker**_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Copy here](https://github.com/RemyXVX/Vendor-Order-Tracker)
 
