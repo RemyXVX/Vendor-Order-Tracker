@@ -8,6 +8,7 @@
 * VSCode
 * GitBash
 * C#
+* .NET6 SDK
 * MSTest
 * WindowPowershell
 
