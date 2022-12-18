@@ -20,5 +20,15 @@ namespace VendorOrder.Tests
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
+    [TestMethod]
+    public void GetDescription_ReturnDescription_String()
+    {
+      string description = "He build things";
+      Vendor newVendor = new Vendor("Bob the Builder", description, "A stack of wood");
+      string result = newVendor.Description;
+      Assert.AreEqual(description, result);
+
+    }
+
   }
 }
