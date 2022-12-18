@@ -15,6 +15,7 @@ namespace VendorOrder.Models
     public string Description {get; set;}
     public string Date {get; set;}
     public int Price {get; set;}
+    public int Id {get; set;}
     
     public Order(string title, string description, string date, int price)
     {
@@ -23,11 +24,22 @@ namespace VendorOrder.Models
       Date = date;
       Price = price;
       _instances.Add(this);
+      Id = _instances.Count;
     }
 
     public static void ClearAll()
     {
       _instances.Clear();
+    }
+
+    public static List<Order> GetAll()
+    {
+      return _instances;
+    }
+
+    public static Order FindPlace(int placeId)
+    {
+      return _instances[placeId -1];
     }
 
   }
