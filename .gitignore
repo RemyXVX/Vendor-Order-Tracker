@@ -1,4 +1,5 @@
 bin/
 obj/
-apppsetting.json
+TestResults/
+appsetting.json
 .vscode
