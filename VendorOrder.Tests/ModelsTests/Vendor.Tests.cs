@@ -21,14 +21,40 @@ namespace VendorOrder.Tests
     }
 
     [TestMethod]
+    public void GetName_ReturnName_String()
+    {
+      string name = "Bob the Builder";
+      Vendor newVendor = new Vendor(name, "He builds things", "A stack of wood");
+      string result = newVendor.Name;
+      Assert.AreEqual(name, result);
+    }
+
+    [TestMethod]
     public void GetDescription_ReturnDescription_String()
     {
       string description = "He build things";
       Vendor newVendor = new Vendor("Bob the Builder", description, "A stack of wood");
       string result = newVendor.Description;
       Assert.AreEqual(description, result);
-
     }
+
+    [TestMethod]
+    public void GetOrder_ReturnOrder_String()
+    {
+      string order = "He build things";
+      Vendor newVendor = new Vendor("Bob the Builder", "He builds things", order);
+      string result = newVendor.Order;
+      Assert.AreEqual(order, result);
+    }
+
+    // [TestMethod]
+    // public void GetDescription_ReturnDescription_String()
+    // {
+    //   string description = "He build things";
+    //   Vendor newVendor = new Vendor("Bob the Builder", description, "A stack of wood");
+    //   string result = newVendor.Description;
+    //   Assert.AreEqual(description, result);
+    // }
 
   }
 }
