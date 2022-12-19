@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@using VendorOrder.Models;
+
+<h1>List of Orders</h1>
+<h2>for @Model["vendors"].Name</h2>
+
+<ol>
+@foreach ( Order order in @Model["orders"])
+{
+  
+}
+  <li></li>
+</ol>
+
+<p><a href="/">Home</a></p>

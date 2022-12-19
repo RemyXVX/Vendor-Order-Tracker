@@ -1,0 +1,20 @@
+@* @{
+  Layout = "_Layout";
+} *@
+
+@using VendorOrder.Models;
+
+<h1>Create a new Vendor</h1>
+
+<h3>Fill out this form to add a new Vendor</h3>
+<form action="/vendors" method="post">
+  <label for="name">Vendor Name</label>
+  <input type="text" id="name" name="name">
+
+  <label for="description">Store Type</label>
+  <input type="text" id="description" name="description">
+
+  <button type="submit">ADD</button>
+</form>
+
+<p><a href="/">Home</a></p>
