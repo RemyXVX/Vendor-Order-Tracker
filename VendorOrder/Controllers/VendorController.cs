@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System;
 using Microsoft.AspNetCore.Mvc;
 using VendorOrder.Models;
 
@@ -7,6 +6,7 @@ namespace VendorOrder.Controllers
 {
   public class VendorController : Controller
   {
+
     [HttpGet("/vendors")]
     public ActionResult Index()
     {
@@ -14,18 +14,17 @@ namespace VendorOrder.Controllers
       return View(currentVendors);
     }
 
-    [HttpPost("/vendors")]
-    public ActionResult Create(string name, string description)
-    {
-      Vendor newVendor = new Vendor(name, description);
-      return Redirect("/");
-    }
-
-
     [HttpGet("/vendors/new")]
     public ActionResult New()
     {
       return View();
+    }
+
+    [HttpPost("/vendors")]
+    public ActionResult Create(string name, string description)
+    {
+      Vendor newVendor = new Vendor(name, description);
+      return RedirectToAction("Index");
     }
 
     [HttpPost("/vendors/delete")]
@@ -35,14 +34,25 @@ namespace VendorOrder.Controllers
       return View();
     }
 
-  // [HttpPost("/vendors")]
-  //   public ActionResult Create(string title, string description, string date, int price)
-  //   {
-  //     Order newOrder = new Order(title, description, date, price);
-  //     return RedirectToAction("Index");
-  //   }
+    [HttpGet("/vendors/{Id}")]
+    public ActionResult Show(int Id)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor chosenVendor = Vendor.Find(Id);
+      List<Order> vendorOrders = chosenVendor.Orders;
+      model.Add("vendors", chosenVendor);
+      model.Add("orders", vendorOrders);
+      return View(model);
+    }
 
-
+    [HttpPost("/vendors/{vendorId}/orders")]
+    public ActionResult Create(string title, string description, string date, int price, int vendorId)
+    {
+      Vendor findVendor = Vendor.Find(vendorId);
+      Order newOrder = new Order(title, description, date, price);
+      findVendor.AddOrder(newOrder);
+      return RedirectToAction("Index");
+    }
 
   }
 }
