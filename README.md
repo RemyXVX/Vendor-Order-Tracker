@@ -11,6 +11,8 @@
 * .NET6 SDK
 * MSTest
 * WindowPowershell
+* Razor
+* CSS
 
 ## Description
 _Updating on previous project and applying C# into it. Plus testing our lines of code through the Red/Green Method._
