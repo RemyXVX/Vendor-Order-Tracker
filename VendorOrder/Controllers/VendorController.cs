@@ -38,10 +38,10 @@ namespace VendorOrder.Controllers
     public ActionResult Show(int Id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Vendor chosenVendor = Vendor.Find(Id);
-      List<Order> vendorOrders = chosenVendor.Orders;
-      model.Add("vendors", chosenVendor);
-      model.Add("orders", vendorOrders);
+      Vendor vendor = Vendor.Find(Id);
+      List<Order> order = vendor.Orders;
+      model.Add("vendors", vendor);
+      model.Add("orders", order);
       return View(model);
     }
 
@@ -51,7 +51,7 @@ namespace VendorOrder.Controllers
       Vendor findVendor = Vendor.Find(vendorId);
       Order newOrder = new Order(title, description, date, price);
       findVendor.AddOrder(newOrder);
-      return RedirectToAction("Index");
+      return RedirectToAction("index");
     }
 
   }
