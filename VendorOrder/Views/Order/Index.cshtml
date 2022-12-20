@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@using VendorOrder.Models;
+
+<h1>@Model.Name</h1>
+
+@if (Model.Orders.Count == 0)
+{
+  <h4>No current orders</h4>
+}
+
+@foreach(Order order in @Model.Orders)
+{
+  <h4><a href="/vendors/@Model.Id/order">@order.Name</a></h4>
+  <p>@order.Description</p>
+}
+
+<h4><a href="/vendors/new">Make a new vendor</a></h4>
+<p><a href="/">Home</a></p>

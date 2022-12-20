@@ -11,20 +11,20 @@ namespace VendorOrder.Models
 
     private static List<Order> _instances = new List<Order> {};
   
-    public string Title {get; set;}
+    public string Name {get; set;}
     public string Description {get; set;}
     public string Date {get; set;}
     public int Price {get; set;}
-    public int OrderId {get;}
+    public int Id {get;}
     
-    public Order(string title, string description, string date, int price)
+    public Order(string name, string description, string date, int price)
     {
-      Title = title;
+      Name = name;
       Description = description;
       Date = date;
       Price = price;
       _instances.Add(this);
-      OrderId = _instances.Count;
+      Id = _instances.Count;
     }
 
     public static void ClearAll()
@@ -39,7 +39,7 @@ namespace VendorOrder.Models
 
     public static Order Find(int placeId)
     {
-      return _instances[placeId -1];
+      return _instances[placeId - 1];
     }
 
   }
