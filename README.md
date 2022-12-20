@@ -47,22 +47,22 @@ git clone "[https://github.com/RemyXVX/Vendor-Order-Tracker.git]"
 ```
 dotnet build
 ```
+Then go on to your favorite web browser and enter [http://localhost:5001](http://localhost:5001) to run the application. 
 
-<big>Afterwards:</big>
+<big>Afterwards, to see our work of art:</big>
 
 ```
 dotnet run
 ```
-
 <big>This way we can double check for errors in our could that need to be addressed.<br>
-We can then run our test:</big>
+To check our test, you can always run:</big>
 
 ```
 dotnet test
 ```
 
 ## Known Bugs
-* _Testing is still being done. Will come back with an errors or bugs_
+* _Haven't made away to delete orders_
 
 ## License
 * **SEE LICENSE [HERE](./LICENSE.txt)** 
